@@ -6,31 +6,31 @@ python-dotenv
 requests
 python-multipart
 
-# Database
-sqlalchemy
-psycopg2-binary
-redis
+# # Database
+# sqlalchemy
+# psycopg2-binary
+# redis
 
-# Authentication
-fastapi-users[sqlalchemy]
+# # Authentication
+# fastapi-users[sqlalchemy]
 
-# Kafka
-aiokafka
-
-
-# AI / ML - RAG, Agentic
-langchain
-langchain-community
-langchain-openai
-langgraph
-qdrant-client
-sentence-transformers
+# # Kafka
+# aiokafka
 
 
-# AI / ML - Computer Vision
-torch
-torchvision
-ultralytics
-roboflow
-pillow
-matplotlib
+# # AI / ML - RAG, Agentic
+# langchain
+# langchain-community
+# langchain-openai
+# langgraph
+# qdrant-client
+# sentence-transformers
+
+
+# # AI / ML - Computer Vision
+# torch
+# torchvision
+# ultralytics
+# roboflow
+# pillow
+# matplotlib

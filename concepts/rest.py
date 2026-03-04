@@ -6,6 +6,8 @@ app_v1 = APIRouter(prefix="/api/v1",tags=["v1"])
 
 users = ["user1", "user2", "user4"]
 
+
+
 class User():
     def __init__(self, id: int, name: str, email: str, password: str):
         self.id = id
