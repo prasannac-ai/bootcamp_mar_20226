@@ -36,9 +36,9 @@ import logging
 # 1. CONFIGURATION
 
 
-SECRET_KEY = "my-super-secret-key-change-in-production"
+SECRET_KEY = "my-super-secret-key-change-in-producti"
 DATABASE_URL = (
-    "postgresql+asyncpg://agriadmin:agriadmin123@localhost:5632/agri_db"
+    "postgresql+asyncpg://agriadmin:agriadmin123@db_service:5432/agri_db"
 )
 ACCESS_TOKEN_EXPIRE_SECONDS = 30 * 60
 logger = logging.getLogger(__name__)

@@ -1,0 +1,13 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY  sensor_gateway.py ./app/sensor_gateway.py
+
+
+EXPOSE 8000
+
+CMD ["uvicorn", "app.sensor_gateway:app", "--host", "0.0.0.0", "--port", "8000"]

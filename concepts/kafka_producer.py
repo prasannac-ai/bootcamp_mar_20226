@@ -28,7 +28,7 @@ class KafkaEventProducer:
         self.bootstrap_servers = bootstrap_servers
         self.producer = None
 
-# Start Kafka producer
+    # Start Kafka producer
     async def start(self):
         self.producer = AIOKafkaProducer(
             bootstrap_servers=self.bootstrap_servers,
@@ -37,12 +37,12 @@ class KafkaEventProducer:
         )
         await self.producer.start()
      
-# Stop Kafka producer
+    # Stop Kafka producer
     async def stop(self):
         if self.producer:
             await self.producer.stop()
             
-# Send event to Kafka topic
+    # Send event to Kafka topic
     async def send_event(self, event_type: str, payload: str, topic: str = TOPIC_NAME, key: str = None):
         event = Event(event_type=event_type, payload=payload)
         event_dict = event.model_dump()
@@ -53,9 +53,9 @@ class KafkaEventProducer:
         )
         return {"topic": topic, "partition": result.partition, "offset": result.offset}
 
-
+#   Send sample events
 async def run_producer_demo():
-    """Send sample events."""
+  
     prod = KafkaEventProducer()
     await prod.start()
 
@@ -64,7 +64,7 @@ async def run_producer_demo():
     event_type = "disease_detect"
     payload = "Tomato Late Blight"
 
-    result = await prod.send_event(event_type, payload)
+    result = await prod.send_event(event_type, payload,key="Sensor-123")
     print(result)
     
     await asyncio.sleep(0.5)

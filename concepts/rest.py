@@ -30,7 +30,7 @@ def startup_db_client():
 class User(Base):
     __tablename__ = "users"
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    name = (String(100), nullable=False)
+    name = Column(String(100), nullable=False)
     email = Column(String(100), nullable=False)
     password = Column(String(100), nullable=False)
 

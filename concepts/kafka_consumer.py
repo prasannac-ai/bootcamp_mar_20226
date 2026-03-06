@@ -40,7 +40,7 @@ class KafkaEventConsumer:
     async def consume(self):
         async for msg in self.consumer:
             event = Event(**msg.value)
-            print(f"   {event.event_type:20s} → {event.payload}")
+            print(f"   {event.event_type} → {event.payload}")
 
 # consume events
 async def run_consumer_demo():

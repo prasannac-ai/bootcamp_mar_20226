@@ -5,6 +5,20 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    depends_on:
+      - db_service
+  sensor_gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile_sgw
+    ports:
+      - "8001:8000"
+  irrigation:
+    build:
+      context: .
+      dockerfile: Dockerfile_irrigation
+    ports:
+      - "8002:8000"
 
   db_service:
     image: postgres:16-alpine
